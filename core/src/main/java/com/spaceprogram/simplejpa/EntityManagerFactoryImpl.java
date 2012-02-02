@@ -312,7 +312,7 @@ public class EntityManagerFactoryImpl implements EntityManagerFactory {
         executor = Executors.newFixedThreadPool(numExecutorThreads);
     }
 
-    private void scanClasses(Set<String> libsToScan) {
+    public void scanClasses(Set<String> libsToScan) {
         try {
             logger.info("Scanning for entity classes...");
             URL[] urls;
@@ -359,7 +359,7 @@ public class EntityManagerFactoryImpl implements EntityManagerFactory {
         }
     }
 
-    private void initEntity(String entity) {
+    public void initEntity(String entity) {
         logger.info("entity=" + entity);
         entityMap.put(entity, entity);
         // also add simple name to it
