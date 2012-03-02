@@ -80,6 +80,7 @@ public class LazyList<E> extends AbstractList<E> implements Serializable {
     }
 
     public void add(int index, E element) {
+        loadAtleastItems(index - 1);
         backingList.add(index, element);
     }
 
